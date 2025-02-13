@@ -61,7 +61,7 @@ const router = createBrowserRouter([
   path: '/3dprinting',
   element: (
     <Protected>
-      <Printing></Printing>
+      <Printing />
     </Protected> 
   ),
 },
@@ -158,7 +158,7 @@ const router = createBrowserRouter([
     path: '/stripe-checkout/',
     element: (
       <Protected>
-        <StripeCheckout></StripeCheckout>
+        <StripeCheckout/>
       </Protected>
     ),
   },
