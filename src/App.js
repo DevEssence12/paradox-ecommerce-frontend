@@ -33,6 +33,7 @@ import { positions, Provider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
 import StripeCheckout from './pages/StripeCheckout';
 import ResetPasswordPage from './pages/ResetPasswordPage';
+import Printing from './pages/3D Printing/3dprinting';
 
 const options = {
   timeout: 5000,
@@ -56,6 +57,15 @@ const router = createBrowserRouter([
       </ProtectedAdmin>
     ),
   },
+{
+  path: '/3dprinting',
+  element: (
+    <Protected>
+      <Printing></Printing>
+    </Protected> 
+  ),
+},
+
   {
     path: '/login',
     element: <LoginPage></LoginPage>,
