@@ -1,30 +1,27 @@
-import { Link } from "react-router-dom";
 import NavBar from "../features/navbar/Navbar";
 import ProductList from "../features/product/components/ProductList";
 import Footer from "../features/common/Footer";
-import StripeCheckout from "./StripeCheckout";
 
 function Home() {
-
-    function go3dPrinting()  {
+    function go3dPrinting() {
         window.location.href = "/3dprinting";
     }
-    function StripePage()  {
-        window.location.href = "/stripe-checkout/";
+
+    function RazorpayPage() {
+        window.location.href = "/razorpay-callback";
     }
 
-    return ( 
+    return (
         <div>
             <NavBar>
-                <ProductList></ProductList>
-                <button onClick={go3dPrinting}>3d Printing</button>
+                <ProductList />
+                <button onClick={go3dPrinting}>3D Printing</button>
                 <br />
-                <button onClick={StripePage}>Stripe Checkout</button>
-
+                <button onClick={RazorpayPage}>Razorpay Checkout</button>
             </NavBar>
-            <Footer></Footer>
+            <Footer />
         </div>
-     );
+    );
 }
 
 export default Home;

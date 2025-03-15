@@ -31,9 +31,9 @@ import AdminProductFormPage from './pages/AdminProductFormPage';
 import AdminOrdersPage from './pages/AdminOrdersPage';
 import { positions, Provider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
-import StripeCheckout from './pages/StripeCheckout';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import Printing from './pages/3D Printing/3dprinting';
+import RazorpayPaymentCallback from './pages/RazorpayPaymentCallback';
 
 const options = {
   timeout: 5000,
@@ -57,15 +57,14 @@ const router = createBrowserRouter([
       </ProtectedAdmin>
     ),
   },
-{
-  path: '/3dprinting',
-  element: (
-    <Protected>
-      <Printing />
-    </Protected> 
-  ),
-},
-
+  {
+    path: '/3dprinting',
+    element: (
+      <Protected>
+        <Printing />
+      </Protected> 
+    ),
+  },
   {
     path: '/login',
     element: <LoginPage></LoginPage>,
@@ -87,6 +86,14 @@ const router = createBrowserRouter([
     element: (
       <Protected>
         <Checkout></Checkout>
+      </Protected>
+    ),
+  },
+  {
+    path: '/razorpay-callback',
+    element: (
+      <Protected>
+        <RazorpayPaymentCallback />
       </Protected>
     ),
   },
@@ -151,14 +158,6 @@ const router = createBrowserRouter([
     element: (
       <Protected>
         <UserProfilePage></UserProfilePage>{' '}
-      </Protected>
-    ),
-  },
-  {
-    path: '/stripe-checkout/',
-    element: (
-      <Protected>
-        <StripeCheckout/>
       </Protected>
     ),
   },
